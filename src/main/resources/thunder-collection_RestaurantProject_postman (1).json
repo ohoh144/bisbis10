@@ -1,0 +1,288 @@
+{
+    "info": {
+        "_postman_id": "3327aeda-b629-4ca5-9beb-d2059588d200",
+        "name": "RestaurantProject",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+        "description": ""
+    },
+    "item": [
+        {
+            "name": "restaurant",
+            "item": [
+                {
+                    "name": "getAllRestaurants",
+                    "request": {
+                        "method": "GET",
+                        "url": {
+                            "raw": "http://localhost:8087/restaurants",
+                            "path": [
+                                "restaurants"
+                            ],
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "8087"
+                        }
+                    }
+                },
+                {
+                    "name": "saveRestaurant",
+                    "request": {
+                        "method": "POST",
+                        "url": {
+                            "raw": "http://localhost:8087/restaurants",
+                            "path": [
+                                "restaurants"
+                            ],
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "8087"
+                        },
+                        "body": {
+                            "mode": "raw",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            },
+                            "raw": "{\n  \"name\" : \"restau 2\",\n  \"averageRating\" : 2,\n  \"isKosher\" : false,\n  \"cuisines\": [\"Asian\"]\n}"
+                        }
+                    }
+                },
+                {
+                    "name": "getRestaurantById",
+                    "request": {
+                        "method": "GET",
+                        "url": {
+                            "raw": "http://localhost:8087/restaurants/1",
+                            "path": [
+                                "restaurants",
+                                "1"
+                            ],
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "8087"
+                        }
+                    }
+                },
+                {
+                    "name": "updateRestaurant",
+                    "request": {
+                        "method": "PUT",
+                        "url": {
+                            "raw": "http://localhost:8087/restaurants/2",
+                            "path": [
+                                "restaurants",
+                                "2"
+                            ],
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "8087"
+                        },
+                        "body": {
+                            "mode": "raw",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            },
+                            "raw": "{\n  \"id\" : 2,\n  \"name\" : \"restau update\",\n  \"averageRating\" : 2,\n  \"isKosher\" : true,\n  \"cuisines\": [\"Asian\",\"Mexican\",\"Indian\"]\n}"
+                        }
+                    }
+                },
+                {
+                    "name": "deleteRestaurant",
+                    "request": {
+                        "method": "DELETE",
+                        "url": {
+                            "raw": "http://localhost:8087/restaurants/2",
+                            "path": [
+                                "restaurants",
+                                "2"
+                            ],
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "8087"
+                        }
+                    }
+                },
+                {
+                    "name": "getAllRestaurantsByCuisine",
+                    "request": {
+                        "method": "GET",
+                        "url": {
+                            "raw": "http://localhost:8087/restaurants?cuisine=Asian",
+                            "query": [
+                                {
+                                    "key": "cuisine",
+                                    "value": "Asian"
+                                }
+                            ],
+                            "variable": [],
+                            "path": [
+                                "restaurants"
+                            ],
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "8087"
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Dishes",
+            "item": [
+                {
+                    "name": "getDishes",
+                    "request": {
+                        "method": "GET",
+                        "url": {
+                            "raw": "http://localhost:8087/restaurants/2/dishes",
+                            "path": [
+                                "restaurants",
+                                "2",
+                                "dishes"
+                            ],
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "8087"
+                        }
+                    }
+                },
+                {
+                    "name": "createDish",
+                    "request": {
+                        "method": "POST",
+                        "url": {
+                            "raw": "http://localhost:8087/restaurants/2/dishes",
+                            "path": [
+                                "restaurants",
+                                "2",
+                                "dishes"
+                            ],
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "8087"
+                        },
+                        "body": {
+                            "mode": "raw",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            },
+                            "raw": "{\"name\":\"Shakshuka 34\",\"description\":\"Great one\",\"price\": 34}"
+                        }
+                    }
+                },
+                {
+                    "name": "updateDish",
+                    "request": {
+                        "method": "PUT",
+                        "url": {
+                            "raw": "http://localhost:8087/restaurants/2/dishes/1",
+                            "path": [
+                                "restaurants",
+                                "2",
+                                "dishes",
+                                "1"
+                            ],
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "8087"
+                        },
+                        "body": {
+                            "mode": "raw",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            },
+                            "raw": "{\"id\" : 1, \"name\":\"Shakshuka updated\",\"description\":\"Great one\",\"price\": 34}"
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Rating",
+            "item": [
+                {
+                    "name": "AddRating",
+                    "request": {
+                        "method": "POST",
+                        "url": {
+                            "raw": "http://localhost:8087/ratings",
+                            "path": [
+                                "ratings"
+                            ],
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "8087"
+                        },
+                        "body": {
+                            "mode": "raw",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            },
+                            "raw": "{\"restaurantId\": 2, \"rating\":3.3}"
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Order",
+            "item": [
+                {
+                    "name": "createOrder",
+                    "request": {
+                        "method": "POST",
+                        "url": {
+                            "raw": "http://localhost:8087/order",
+                            "path": [
+                                "order"
+                            ],
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "8087"
+                        },
+                        "body": {
+                            "mode": "raw",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            },
+                            "raw": "{\"restaurantId\": 2, \"orderItems\":[{\"dishId\":1,\"amount\":1} ]} "
+                        }
+                    }
+                }
+            ]
+        }
+    ]
+}
