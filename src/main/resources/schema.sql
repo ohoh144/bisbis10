@@ -1,3 +1,7 @@
-CREATE TABLE IF NOT EXISTS task (
-  description VARCHAR(64) NOT NULL,
-  completed   VARCHAR(30) NOT NULL);
+CREATE TABLE IF NOT EXISTS Restaurant (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255),
+    averageRating INT,
+    isKosher BOOLEAN,
+    cuisines JSON
+);

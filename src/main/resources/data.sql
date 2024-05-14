@@ -1,3 +1,2 @@
-INSERT INTO task ( description, completed) VALUES
-  ( 'description1', 'completed'),
-  ('description2', 'completed');
+INSERT INTO Restaurant (name, averageRating, isKosher, cuisines)
+VALUES ('kfc', 2, false, '["Asian"]');
